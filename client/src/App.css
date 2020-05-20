@@ -11,6 +11,27 @@ form{
   margin: 15px 0px 15px 0px;
 }
 
+#roster {
+  margin-top: 5rem;
+margin-left: auto;
+margin-right: auto;
+  width: 75%;
+}
+
+.homeNewsHeader {
+  color: #f3f3f3;
+  margin-top: 1em;
+}
+
+.homeContent {
+  background-color: #d3d3d3;
+  margin-top: 3em;
+}
+
+.playerLink {
+  color: #008080
+}
+
 .login_button {
   color: #fff;
 }
@@ -21,8 +42,12 @@ form{
   margin: -475px 0px -550px 0px;
 }
 
+.memberList{
+  color: #f3f3f3;
+}
+
 .navLogo{
-  margin-left: 15px;
+  margin-left: 65px;
   padding-right: 5px;
 }
 
@@ -32,7 +57,7 @@ form{
 .navCrest {
   height: 3%;
   width: 3%;
-  margin: -5px -15px -5px -10px;
+  margin: -5px -60px -5px -10px;
 }
 
 .formControl {

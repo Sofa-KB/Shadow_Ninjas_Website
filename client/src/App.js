@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Crest from './images/guild_crest_large.png';
 import Logo from './images/Shadow2.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.js';
 import './index.css';
 import './App.css';
 

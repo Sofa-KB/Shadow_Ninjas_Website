@@ -46,7 +46,7 @@ app.get('/auth/bnet/callback',
       //User access token
       var userToken = req.user.token
       
-      res.redirect('http://localhost:3000/Home')
+      res.redirect('http://localhost:3000/Home/' + userToken)
     });
 
 app.listen(PORT, function() {
