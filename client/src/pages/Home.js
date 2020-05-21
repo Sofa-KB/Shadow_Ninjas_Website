@@ -2,11 +2,12 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import { Col, Card, Row, Button, Glyphicon, Panel, ListGroupItem, ListGroup, FormControl } from 'react-bootstrap'
 
-function Home() {
 
-    const newURL = window.location.pathname
-    const userToken = newURL.replace('/Home/', '')
-    console.log(userToken)
+const newURL = window.location.pathname
+const userToken = newURL.replace('/Home/', '')
+console.log(userToken)
+
+function Home() {
     
     return (
         <div>
@@ -28,3 +29,4 @@ function Home() {
 }
 
 export default Home;
+export { userToken };

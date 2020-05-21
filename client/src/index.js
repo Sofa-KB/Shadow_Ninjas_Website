@@ -6,6 +6,7 @@ import App from './App';
 import Home from './pages/Home'
 import Events from './pages/Events'
 import Roster from './pages/Roster'
+import userToken from './pages/Home.js'
 
 ReactDOM.render(
   <React.StrictMode>
