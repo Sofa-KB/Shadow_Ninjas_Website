@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 3001;
 const BnetStrategy = require('passport-bnet').Strategy;
 const Sequelize = require('sequelize');
 const dotenv = require('dotenv')
+const cors = require('cors')
+const axios = require('axios');
 const db = require('./models')
 dotenv.config();
 
@@ -36,6 +38,7 @@ const BNET_SECRET = process.env.BNET_SECRET
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors({origin: 'http://localhost:3000'}))
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -75,6 +78,35 @@ app.get('/auth/bnet/callback',
 
     res.redirect('http://localhost:3000/Home/' + userToken)
   });
+
+app.post('/api/initUser', (req, res, next) => {
+  const {userToken} = req.body;
+  console.log('userToken-----',userToken)
+  const guildActivityAPI = 'https://us.api.blizzard.com/data/wow/guild/nordrassil/shadow-ninjas/activity?namespace=profile-us&locale=en_US&access_token=' + userToken
+
+    // const getActivity = async () => {
+    //     const activity = await axios.get(guildActivityAPI)
+    //     const activityData = activity.data.activities
+    //     console.log(activityData)
+    //     const achievementText = await axios.get()
+       
+    // }
+    axios.get(guildActivityAPI).then(activity => {
+      const activityData = activity.data.activities;
+      axios.get(activityData[0].character_achievement.achievement.key.href).then(r => {
+        console.log('------r', r)
+      })
+      // const activityPromises = activityData.map(act => {
+      //   return axios.get(act.character_achievement.achievement.key.href)
+      // })
+      // console.log(activityPromises)
+      // Promise.all(activityPromises).then((activityResponse) => {
+      //   console.log(activityResponse)
+      // })
+  }).catch(e => next(e))
+    
+  res.send('hello')
+})
 
 db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {

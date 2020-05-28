@@ -27,12 +27,14 @@
     "express": "^4.16.3",
     "helmet": "^3.22.0",
     "if-env": "^1.0.4",
+    "immutability-helper": "^3.0.2",
     "mongoose": "^5.3.16",
     "morgan": "^1.10.0",
     "mysql2": "^2.1.0",
     "passport": "0.4.1",
     "passport-bnet": "2.0.0",
     "passport-oauth2": "^1.5.0",
+    "querystring": "^0.2.0",
     "sequelize": "^5.21.10"
   }
 }
