@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Navbar from '../components/Navbar'
+import Navbar from '../components/NavbarSearch'
 
 function Roster() {
 
+    localStorage.getItem('userToken')
+    console.log(localStorage.userToken)
     const [data, setData] = useState([]);
-    const accessToken = "US1QjlGfav64SwNUq4EK6cUUDHdaG3YgXN";
+    const accessToken = localStorage.userToken;
     const memberList_API = 'https://us.api.blizzard.com/data/wow/guild/nordrassil/shadow-ninjas/roster?namespace=profile-us&locale=en_US&access_token=' + accessToken;
 
     const getRoster = async () => {
@@ -21,7 +23,7 @@ function Roster() {
 
     return (
         <div>
-            <Navbar />
+            <Navbar/>
                 <div id="roster" className='text-center'>
                     <table className="table table-striped table-bordered">
                         <thead>

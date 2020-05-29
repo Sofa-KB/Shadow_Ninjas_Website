@@ -6,6 +6,9 @@ import App from './App';
 import Home from './pages/Home'
 import Events from './pages/Events'
 import Roster from './pages/Roster'
+import CreateEvent from './pages/CreateEvent'
+
+localStorage.getItem('userToken')
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,9 +22,13 @@ ReactDOM.render(
       <Route path='/Events'>
         <Events />
       </Route>
+      <Route path='/CreateEvent'>
+        <CreateEvent />
+      </Route>
       <Route path='/Roster'>
         <Roster />
       </Route>
+      
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
