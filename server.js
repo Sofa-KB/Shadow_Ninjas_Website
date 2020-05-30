@@ -10,17 +10,17 @@ const axios = require('axios');
 const db = require('./models')
 dotenv.config();
 
-// Dev Environment ----
-const sequelize = new Sequelize('final_project_db', 'root', 'root', {
-  host: 'localhost',
-  dialect: 'mysql'
-});
-
-// Production Environment ----
-// const sequelize = new Sequelize(process.env.DB, process.env.USER, process.env.PASS, {
-//   host: process.env.HOST,
+// // Dev Environment ----
+// const sequelize = new Sequelize('final_project_db', 'root', 'root', {
+//   host: 'localhost',
 //   dialect: 'mysql'
 // });
+
+// Production Environment ----
+const sequelize = new Sequelize(process.env.DB, process.env.USER, process.env.PASS, {
+  host: process.env.HOST,
+  dialect: 'mysql'
+});
 
 //Test Sequelize connection with Database
 try {
