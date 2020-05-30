@@ -19,14 +19,47 @@ form{
   width: 75%;
 }
 
+
 .createEvent {
   margin-top: 2rem;;
   color: #d3d3d3;
 }
 
+.playerName {
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
+.numberPlayers {
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
+.eventDate {
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
+.eventType {
+  margin-bottom: 15px;
+}
+
+.eventTime {
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
 .event {
   margin-top: 5rem;
   width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eventCard {
+  width: 75%;
+  padding: 10px;
+  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
 }

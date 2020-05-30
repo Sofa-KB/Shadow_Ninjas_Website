@@ -1,8 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar'
 import {Form, Card, Button} from 'react-bootstrap'
-import axios from 'axios'
-
 
 function CreateEvent() {
 
